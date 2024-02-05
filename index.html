@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Guide App</title>
     <!-- Google Font -->
-    <link
+     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
       rel="stylesheet"
-    />
+    /> 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
+     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
@@ -24,7 +24,36 @@
       </div>
       <div id="result"></div>
     </div>
+
+
+    <!-- Add a select dropdown for genres -->
+<div class="genre-select-container">
+  <label for="genre-select" id="head">Select Genre:</label>
+  <select id="genre-select">
+    <option value="action">Action</option>
+    <option value="comedy">Comedy</option>
+    <option value="drama">Drama</option>
+    <option value="sport">Sport</option>
+    <option value="biography">Biography</option>
+    <option value="horror">Horror</option>
+    <option value="thriller">Thriller</option>
+    <!-- Add more genres as needed -->
+  </select>
+</div>
+
+<!-- Add a new section for trending movies -->
+<section class="trending-movies">
+  <h2>Trending Movies</h2>
+  <div id="trending-results" class="trending-grid"></div>
+</section>
+
+
+
     <script src="key.js"></script>
     <script src="script.js"></script>
-  </body>
-</html>
+      </body>
+</html> 
+
+
+
+

@@ -55,5 +55,57 @@ let getMovie = () => {
       });
   }
 };
+
+
+let genreSelect = document.getElementById("genre-select");
+
+// Function to fetch and display trending movies by selected genre
+let updateTrendingMovies = () => {
+  let selectedGenre = genreSelect.value;
+  let trendingResults = document.getElementById("trending-results");
+
+  let trendingUrl = `http://www.omdbapi.com/?s=${selectedGenre}&type=movie&apikey=${key}`;
+
+  fetch(trendingUrl)
+    .then((resp) => resp.json())
+    .then((data) => {
+      if (data.Response == "True" && data.Search) {
+        let trendingMovies = data.Search.slice(0, 5);
+        let trendingHTML = trendingMovies.map((movie) => {
+          return `
+            <div class="trending-movie">
+              <img src=${movie.Poster} alt="${movie.Title}">
+              <p>${movie.Title}</p>
+            </div>
+          `;
+        }).join("");
+
+        trendingResults.innerHTML = trendingHTML;
+      } else {
+        trendingResults.innerHTML = `<p class="msg">No trending movies found.</p>`;
+      }
+    })
+    .catch(() => {
+      trendingResults.innerHTML = `<p class="msg">Error occurred while fetching trending movies.</p>`;
+    });
+};
+
+// Add an event listener to the genre select dropdown
+genreSelect.addEventListener("change", updateTrendingMovies);
+
+// Call the function initially
+updateTrendingMovies();
+
+
+
 searchBtn.addEventListener("click", getMovie);
 window.addEventListener("load", getMovie);
+
+
+
+
+
+
+
+
+

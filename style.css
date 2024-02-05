@@ -1,4 +1,4 @@
-* {
+ * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,7 +6,7 @@
   }
   body {
     height: 100vh;
-    background: linear-gradient(#000000 50%, #ffb92a 50%);
+    background: linear-gradient(#ffb92a 50%, #000000 50%);
   }
   .container {
     font-size: 16px;
@@ -111,9 +111,82 @@
     text-align: justify;
     color: #a0a0a0;
   }
-  .msg {
-    text-align: center;
+
+  
+
+
+  .trending-movies {
+    margin-top: 2em;
   }
+  
+  .trending-movie {
+    text-align: center;
+    background-color: #403e32;
+    padding: 1em;
+    border-radius: 0.4em;
+    box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .trending-movie:hover {
+    transform: translateY(-0.2em);
+  }
+  
+  .trending-movie img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.3em;
+    box-shadow: 0 0.2em 0.5em rgba(18, 18, 18, 0.3);
+  }
+  
+  .trending-movie p {
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    color: #a0a0a0;
+    font-weight: 500;
+  }
+  
+
+
+  .genre-select-container {
+    margin-bottom: 1em;
+    margin-top: 700px;
+    margin-left: 600px;
+  }
+  #head{
+    color: #ffffff;
+    font-size: medium;
+  }
+  
+  #genre-select {
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    margin-top: 10px;
+  }
+  
+  .trending-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1em;
+  }
+
+  .trending-movies h2{
+    color: #ffffff;
+  }
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
   @media screen and (max-width: 600px) {
     .container {
       font-size: 14px;
@@ -126,7 +199,15 @@
       width: auto;
       max-height: 10.8em;
     }
-  }
+    .genre-select-container {
+      margin-bottom: 1em;
+      margin-left: 70px;
+    }
+  } 
+
+
+
+
   /* * {
     padding: 0;
     margin: 0;
@@ -256,3 +337,10 @@
       max-height: 10.8em;
     }
   } */
+
+
+
+
+
+
+  
